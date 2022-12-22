@@ -334,12 +334,12 @@ class MainWindow(QWidget):
         task_id = self.tasks[row][0]
         name = self.task_name.text()
         description = self.task_description.toPlainText()
-        cat_row = self.tasks_list.currentRow()
-        category_id = self.categories[cat_row][0]
+     #   cat_row = self.tasks_list.currentRow()
+     #   category_id = self.categories[cat_row][0]
         query = QSqlQuery()
         query.exec(
             f'''UPDATE tasks
-            SET name = '{name}', description = '{description}', category_id = '{category_id}'
+            SET name = '{name}', description = '{description}'
             WHERE id = {task_id};'''
         )
         self.load_tasks()
